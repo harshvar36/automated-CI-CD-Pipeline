@@ -5,7 +5,7 @@ pipeline {
     environment {
         // Define a variable for the image name to avoid repetition
         // This MUST match your Docker Hub username / repo name
-        DOCK_IMAGE_NAME = "harshvar36/automated-ci-cd-pipeline"
+        DOCKER_IMAGE_NAME = "harshvar36/automated-ci-cd-pipeline"
     }
 
     stages {
@@ -16,7 +16,7 @@ pipeline {
                     
                     // This 'sh' (shell) command is run by Jenkins
                     // We now build it with the full Docker Hub name from the start
-                    sh "docker build -t ${DOCK_IMAGE_NAME}:latest ."
+                    sh "docker build -t ${DOCKER_IMAGE_NAME}:latest ."
                     
                     echo "Docker image build complete."
                 }
